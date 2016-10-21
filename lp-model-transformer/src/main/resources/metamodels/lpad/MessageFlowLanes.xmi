@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lpad:LPAdRoot
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI"
+    xmlns:lpad="http://learnpad.eu"
+    xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI bpmn2.0/BPMN20.ecore http://learnpad.eu learnPAd.ecore"
+    id="mod.342423"
+    name="Monti Azzurri"
+    version="1">
+  <bpmnModels
+      id="_18_0_4_8f30289_1448629549537_798075_23120"
+      name="Test diagram"
+      version="111">
+    <processes
+        id="_18_0_4_8f30289_1447830895537_881465_21482"
+        name="Monti Azzurri">
+      <laneSets
+          id="_18_0_4_8f30289_1447830921364_504677_21498_Ref-1_laneSet"
+          name="ls1">
+        <messages
+            name="msgBetweenLaneSet"
+            sourceRef="_18_0_4_8f30289_1447830921364_504677_21498_Ref-1_laneSet"
+            targetRef="_18_0_4_8f30289_1447831007612_34391_21513_Ref-1_laneSet"/>
+        <lanes
+            id="_18_0_4_8f30289_1447830921364_504677_21498"
+            name="Enterpreneur">
+          <partitionElement
+              xsi:type="bpmn2:MessageFlow"
+              name="msgBetweenLanes"
+              sourceRef="_18_0_4_8f30289_1447830921364_504677_21498"/>
+        </lanes>
+      </laneSets>
+      <laneSets
+          id="_18_0_4_8f30289_1447831007612_34391_21513_Ref-1_laneSet"
+          name="ls2"/>
+    </processes>
+  </bpmnModels>
+</lpad:LPAdRoot>
