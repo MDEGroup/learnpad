@@ -23,6 +23,7 @@ import java.util.Set;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 import org.w3c.dom.Document;
@@ -42,6 +43,7 @@ public class Alignment {
 	
 	private String tmpModelFolder = "/tmp/learnpad/mt";
 	private String tmpFileFromInputStream = "fileFromInputStream.xml";
+	private String tmpFileFromInputStream_md = "fileFromInputStream_md.xml";
 	private boolean deleteFile = true;
 	
 	public static String ADOXX_XMIHeader = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Ado:ADOXMLType xmi:version=\"2.0\"  xmlns:xmi=\"http://www.omg.org/XMI\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:Ado=\"http://www.ado.org\" xsi:schemaLocation=\"http://www.ado.org /Adoxx2XWiki/models/Ado.ecore\">\n";
@@ -84,10 +86,16 @@ public class Alignment {
 		
 		boolean result = false;
 
-        Path modelPath = Paths.get(String.format("%s/%s", tmpModelFolder, tmpFileFromInputStream));
+        Path modelPath = Paths.get(String.format("%s/%s", tmpModelFolder, tmpFileFromInputStream_md));
+        File fileToCheck = modelPath.toFile();
+        if (fileToCheck.exists()){
+        	fileToCheck.delete();
+        	modelPath = Paths.get(String.format("%s/%s", tmpModelFolder, tmpFileFromInputStream_md));
+        }  
         Files.copy(modelInputStream, modelPath);
         String fileFromInputStreamPath = modelPath.toString();
 		
+//        Essentially it copies the input file in the output file. 
 		File fileToSanitize = sanitizerForMagicDraw(fileFromInputStreamPath);
 		
 		//TODO check also if the outputstream was written correctly
@@ -99,9 +107,9 @@ public class Alignment {
         Files.copy(fileToSanitize.toPath(), out);
 		
 		if(deleteFile){
-			File fileToDelete = new File(tmpModelFolder + tmpFileFromInputStream);
+			File fileToDelete = new File(tmpModelFolder + tmpFileFromInputStream_md);
 			fileToDelete.delete();
-			System.out.println("Tmp file ("+tmpModelFolder + tmpFileFromInputStream+") from input stream deleted!");
+			System.out.println("Tmp file ("+tmpModelFolder + tmpFileFromInputStream_md+") from input stream deleted!");
 		}
 		
 		if(result){
@@ -113,10 +121,30 @@ public class Alignment {
 	
 	
 	
-	//TODO
+	/**
+	 * Essentially it copies the input file in the output file. 
+	 * @param modelInputPath
+	 * @return File
+	 */
 	private File sanitizerForMagicDraw(String modelInputPath){
 		
-		return null;
+		String basenameInputModel = FilenameUtils.getBaseName(modelInputPath);
+		
+		String resultFilePath = tmpModelFolder + basenameInputModel + ".xmi";
+		
+		File inputFile = new File(modelInputPath);
+		
+		//CREATE RESULT FILE
+		File resultFile = new File(resultFilePath);
+		
+		try {
+			FileUtils.copyFile(inputFile, resultFile);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return resultFile;
 		
 	}
 	

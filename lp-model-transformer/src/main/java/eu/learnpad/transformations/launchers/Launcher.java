@@ -99,15 +99,74 @@ public class Launcher
             return null;
         }
     }
+    
+    
+    
+    
+    
+    public Path chain2(InputStream model, String type) throws Exception
+    {
+        Path mdModelPath = Paths.get("/tmp/learnpad/mt/model.md.xmi");
+        Path adoxxModelPath = Paths.get("/tmp/learnpad/mt/model.adoxx.xmi");
+        Path xwikiModelPath = Paths.get("/tmp/learnpad/mt/model.xwiki.xmi");
+        
+        AlignmentLauncher alignLauncher = new AlignmentLauncher();
+        
+        // ALIGN MD
+        OutputStream alignOutputStream = Files.newOutputStream(mdModelPath);
+        boolean isAlign2 = alignLauncher.align(model, "MD", alignOutputStream);
+        
+        ATLTransformationLauncher transformLauncher = new ATLTransformationLauncher();
+        
+        //MD->ADOXX
+        InputStream transformInputStream2 = Files.newInputStream(mdModelPath);
+        OutputStream md2adoxxOutputStream = Files.newOutputStream(adoxxModelPath);
+        boolean isTransformed = transformLauncher.transform(transformInputStream2, "MD", md2adoxxOutputStream);
+        
+        
+
+        // ALIGN ADOXX
+//        OutputStream alignOutputStream2 = Files.newOutputStream(adoxxModelPath);
+//        boolean isAlign = alignLauncher.align(model, "ADOXX", alignOutputStream2);
+
+
+        // ADOXX->XWIKI
+        InputStream transformInputStream = Files.newInputStream(adoxxModelPath);
+        OutputStream transformOutputStream = Files.newOutputStream(xwikiModelPath);
+        boolean isTransformed2 = transformLauncher.transform(transformInputStream, "ADOXX", transformOutputStream);
+
+        
+        // WRITE
+        AcceleoTransformationLauncher writeLauncher = new AcceleoTransformationLauncher();
+        InputStream writeInputStream = Files.newInputStream(xwikiModelPath);
+        Path path = writeLauncher.write(writeInputStream);
+
+        // CLEAN
+//        alignOutputStream.close();
+//        alignOutputStream2.close();
+        transformInputStream.close();
+        transformInputStream2.close();
+        transformOutputStream.close();
+        md2adoxxOutputStream.close();
+        writeInputStream.close();
+//        Files.delete(lpModelPath);
+//        Files.delete(xwikiModelPath);
+
+        if (isTransformed && path != null) {
+            return path;
+        } else {
+            return null;
+        }
+    }
 
     public static void main(String[] args) throws Exception
     {
 
         // String model_in = "resources/model/ado4f16a6bb-9318-4908-84a7-c2d135253dc9.xml";
-        String model_in = "resources/model/adoxx_modelset.xml";
+        String model_in = "resources/model/learnpad.xmi";
         String file_out = "/tmp/testAlignmentOutputStream.xmi";
-        String type = "ADOXX";
-        // String type = "MD";
+//        String type = "ADOXX";
+         String type = "MD";
 
         // create a new output stream
         OutputStream out = new FileOutputStream(file_out);
@@ -119,7 +178,7 @@ public class Launcher
          * ****************************************** ****ALIGNMENT EXAMPLE**********************
          * ******************************************
          */
-        launcher.align(fis, type, out);
+//        launcher.align(fis, type, out);
 
         /*
          * ****************************************** ****ATL TRANSFORMATION EXAMPLE*************
@@ -137,7 +196,7 @@ public class Launcher
          * ****************************************** ****CHAIN EXAMPLE*************************
          * ******************************************
          */
-        // launcher.chain(fis, type);
+         launcher.chain2(fis, type);
 
     }
 }
