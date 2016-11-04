@@ -84,30 +84,6 @@ public class ATLTransformation
 
     }
     
-    /*
-	 * This method does two things, it initializes an Ecore parser and then programmatically looks for
-	 * the package definition on it, obtains the NsUri and registers it.
-	 */
-	private String lazyMetamodelRegistration(String metamodelPath){
-		
-		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("ecore", new EcoreResourceFactoryImpl());
-   	
-	    ResourceSet rs = new ResourceSetImpl();
-	    // Enables extended meta-data, weird we have to do this but well...
-	    final ExtendedMetaData extendedMetaData = new BasicExtendedMetaData(EPackage.Registry.INSTANCE);
-	    rs.getLoadOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, extendedMetaData);
-	
-	    Resource r = rs.getResource(URI.createFileURI(metamodelPath), true);
-	    EObject eObject = r.getContents().get(0);
-	    // A meta-model might have multiple packages we assume the main package is the first one listed
-	    if (eObject instanceof EPackage) {
-	        EPackage p = (EPackage)eObject;
-	        System.out.println(p.getNsURI());
-	        EPackage.Registry.INSTANCE.put(p.getNsURI(), p);
-	        return p.getNsURI();
-	    }
-	    return null;
-	}
 
     /**
      * The function is the only one to be visible to the outside and is the one that initiates the whole process of

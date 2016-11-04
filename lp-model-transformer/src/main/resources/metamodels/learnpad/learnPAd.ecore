@@ -25,28 +25,28 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BPMNModel" eSuperTypes="#//LPAdBaseModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="processes" upperBound="-1"
-        eType="ecore:EClass /Users/francesco/git/learnpad/lp-model-transformer/src/main/resources/metamodels/lpad/bpmn2.0/BPMN20.ecore#//Process" containment="true"/>
+        eType="ecore:EClass bpmn2.0/BPMN20.ecore#//Process" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BMMModel" eSuperTypes="#//LPAdBaseModel">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="motivationProcess" eType="ecore:EClass /Users/francesco/git/learnpad/lp-model-transformer/src/main/resources/metamodels/lpad/bmm/BMM.ecore#//BusinessProcess"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="motivationProcess" eType="ecore:EClass bmm/BMM.ecore#//BusinessProcess"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompetencyModel" eSuperTypes="#//LPAdBaseModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="competencyRootContainer"
-        eType="ecore:EClass /Users/francesco/git/learnpad/lp-model-transformer/src/main/resources/metamodels/lpad/competency/Competency.ecore#//CompetencyRootContainer"
+        eType="ecore:EClass competency/Competency.ecore#//CompetencyRootContainer"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DKModel" eSuperTypes="#//LPAdBaseModel">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="document" eType="ecore:EClass /Users/francesco/git/learnpad/lp-model-transformer/src/main/resources/metamodels/lpad/documentAndKnowledge/DocumentAndKnowledge.ecore#//DocumentRoot"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="document" eType="ecore:EClass documentAndKnowledge/DocumentAndKnowledge.ecore#//DocumentRoot"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OrganisationalModel" eSuperTypes="#//LPAdBaseModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="organisationalUnits" upperBound="-1"
-        eType="ecore:EClass /Users/francesco/git/learnpad/lp-model-transformer/src/main/resources/metamodels/lpad/organizational/Organisational.ecore#//OrganisationalUnit"
+        eType="ecore:EClass organizational/Organisational.ecore#//OrganisationalUnit"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="KPIModel" eSuperTypes="#//LPAdBaseModel">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="learningGoal" eType="ecore:EClass /Users/francesco/git/learnpad/lp-model-transformer/src/main/resources/metamodels/lpad/kpi/kpi.ecore#//LearningGoal"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="learningGoal" eType="ecore:EClass kpi/kpi.ecore#//LearningGoal"
         containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
