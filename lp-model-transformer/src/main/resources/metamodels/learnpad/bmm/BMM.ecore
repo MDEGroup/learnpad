@@ -175,7 +175,7 @@
         ordered="false" lowerBound="1" eType="#//OrganizationUnit" changeable="false"
         eOpposite="#//OrganizationUnit/definedEnd"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="definedByOrganisationalUnit"
-        eType="ecore:EClass ../organizational/Organisational.ecore#//OrganisationalUnit"/>
+        eType="ecore:EClass ../organizational/Organizational.ecore#//OrganisationalUnit"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExternalInfluencer" eSuperTypes="#//Influencer"/>
   <eClassifiers xsi:type="ecore:EClass" name="FixedAsset" eSuperTypes="#//Asset">
@@ -241,7 +241,7 @@
         ordered="false" lowerBound="1" upperBound="-1" eType="#//OrganizationUnit"
         changeable="false" eOpposite="#//OrganizationUnit/establishedMeans"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="establishedByOrganisationalUnit"
-        eType="ecore:EClass ../organizational/Organisational.ecore#//OrganisationalUnit"/>
+        eType="ecore:EClass ../organizational/Organizational.ecore#//OrganisationalUnit"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Mission" eSuperTypes="#//Means">
     <eStructuralFeatures xsi:type="ecore:EReference" name="missionComponent" ordered="false"

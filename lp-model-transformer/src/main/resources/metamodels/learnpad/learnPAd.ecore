@@ -13,8 +13,8 @@
         eType="#//CompetencyModel" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="documentAndKnowledgeModels"
         upperBound="-1" eType="#//DKModel" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="organisationalModels" upperBound="-1"
-        eType="#//OrganisationalModel" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="organizationalModels" upperBound="-1"
+        eType="#//OrganizationalModel" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="kpiModels" upperBound="-1"
         eType="#//KPIModel" containment="true"/>
   </eClassifiers>
@@ -40,9 +40,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="document" eType="ecore:EClass documentAndKnowledge/DocumentAndKnowledge.ecore#//DocumentRoot"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OrganisationalModel" eSuperTypes="#//LPAdBaseModel">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="organisationalUnits" upperBound="-1"
-        eType="ecore:EClass organizational/Organisational.ecore#//OrganisationalUnit"
+  <eClassifiers xsi:type="ecore:EClass" name="OrganizationalModel" eSuperTypes="#//LPAdBaseModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="organizationalUnits" upperBound="-1"
+        eType="ecore:EClass organizational/Organizational.ecore#//OrganizationalUnit"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="KPIModel" eSuperTypes="#//LPAdBaseModel">

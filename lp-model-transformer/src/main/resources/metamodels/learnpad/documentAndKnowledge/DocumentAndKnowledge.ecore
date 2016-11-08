@@ -2,6 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dk" nsURI="http://learnpad.eu/dk" nsPrefix="dk">
   <eClassifiers xsi:type="ecore:EClass" name="DMResource" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -27,7 +28,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="competency" upperBound="-1"
         eType="ecore:EClass ../competency/Competency.ecore#//Competency" eOpposite="../competency/Competency.ecore#//Competency/isDocumentedIn"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="responsibleRole" upperBound="-1"
-        eType="ecore:EClass ../organizational/Organisational.ecore#//Role"/>
+        eType="ecore:EClass ../organizational/Organizational.ecore#//Role"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="KnowledgeProduct">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -44,7 +45,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
         eType="#//DMResource" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="productResponsibility"
-        upperBound="-1" eType="ecore:EClass ../organizational/Organisational.ecore#//OrganisationalUnit"/>
+        upperBound="-1" eType="ecore:EClass ../organizational/Organizational.ecore#//OrganisationalUnit"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DocumentRoot">
     <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"

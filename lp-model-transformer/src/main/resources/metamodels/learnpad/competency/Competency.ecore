@@ -8,6 +8,8 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Base" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -40,7 +42,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompetencyProfile" eSuperTypes="#//Base">
     <eStructuralFeatures xsi:type="ecore:EReference" name="isAcquiredByPerformer"
-        upperBound="-1" eType="ecore:EClass ../organizational/Organisational.ecore#//Performer"/>
+        upperBound="-1" eType="ecore:EClass ../organizational/Organizational.ecore#//Performer"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompetencySet" eSuperTypes="#//Base">
     <eStructuralFeatures xsi:type="ecore:EReference" name="included" upperBound="-1"
@@ -48,13 +50,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="profile" upperBound="-1"
         eType="#//CompetencyProfile" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="isAssignedToOrganisationalUnit"
-        upperBound="-1" eType="ecore:EClass ../organizational/Organisational.ecore#//OrganisationalUnit"/>
+        upperBound="-1" eType="ecore:EClass ../organizational/Organizational.ecore#//OrganisationalUnit"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="isAssignedToPosition" upperBound="-1"
-        eType="ecore:EClass ../organizational/Organisational.ecore#//Position"/>
+        eType="ecore:EClass ../organizational/Organizational.ecore#//Position"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="isAssignedToRole" upperBound="-1"
-        eType="ecore:EClass ../organizational/Organisational.ecore#//Role"/>
+        eType="ecore:EClass ../organizational/Organizational.ecore#//Role"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="isAssignedToTeam" upperBound="-1"
-        eType="ecore:EClass ../organizational/Organisational.ecore#//Team"/>
+        eType="ecore:EClass ../organizational/Organizational.ecore#//Team"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompetencyRootContainer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="competencyGroups" upperBound="-1"

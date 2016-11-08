@@ -441,15 +441,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="isMeasuredByCriterion"
         upperBound="-1" eType="ecore:EClass ../kpi/kpi.ecore#//Criterion"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="isPerformedByOrganisationalUnit"
-        upperBound="-1" eType="ecore:EClass ../organizational/Organisational.ecore#//OrganisationalUnit"/>
+        upperBound="-1" eType="ecore:EClass ../organizational/Organizational.ecore#//OrganizationalUnit"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="isResponsibleByOrganisationalUnit"
-        upperBound="-1" eType="ecore:EClass ../organizational/Organisational.ecore#//OrganisationalUnit"/>
+        upperBound="-1" eType="ecore:EClass ../organizational/Organizational.ecore#//OrganizationalUnit"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="isPerformedBy" upperBound="-1"
-        eType="ecore:EClass ../organizational/Organisational.ecore#//Performer"/>
+        eType="ecore:EClass ../organizational/Organizational.ecore#//Performer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="isPerformedByPosition"
-        upperBound="-1" eType="ecore:EClass ../organizational/Organisational.ecore#//Position"/>
+        upperBound="-1" eType="ecore:EClass ../organizational/Organizational.ecore#//Position"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="isPerformedByRole" upperBound="-1"
-        eType="ecore:EClass ../organizational/Organisational.ecore#//Role"/>
+        eType="ecore:EClass ../organizational/Organizational.ecore#//Role"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="competency" upperBound="-1"
         eType="ecore:EClass ../competency/Competency.ecore#//Competency"/>
   </eClassifiers>
@@ -1013,11 +1013,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="partitionElementRef" ordered="false"
         eType="#//BaseElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="representsPerformer" upperBound="-1"
-        eType="ecore:EClass ../organizational/Organisational.ecore#//Performer"/>
+        eType="ecore:EClass ../organizational/Organizational.ecore#//Performer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="representsRole" upperBound="-1"
-        eType="ecore:EClass ../organizational/Organisational.ecore#//Role"/>
+        eType="ecore:EClass ../organizational/Organizational.ecore#//Role"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="representsOrganisationalUnit"
-        upperBound="-1" eType="ecore:EClass ../organizational/Organisational.ecore#//OrganisationalUnit"/>
+        upperBound="-1" eType="ecore:EClass ../organizational/Organizational.ecore#//OrganizationalUnit"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LaneSet" eSuperTypes="#//BaseElement #//InteractionNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="messages" ordered="false"
@@ -1025,7 +1025,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="lanes" ordered="false"
         upperBound="-1" eType="#//Lane" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="representsOrganisationalUnit"
-        upperBound="-1" eType="ecore:EClass ../organizational/Organisational.ecore#//OrganisationalUnit"/>
+        upperBound="-1" eType="ecore:EClass ../organizational/Organizational.ecore#//OrganizationalUnit"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LinkEventDefinition" eSuperTypes="#//EventDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
