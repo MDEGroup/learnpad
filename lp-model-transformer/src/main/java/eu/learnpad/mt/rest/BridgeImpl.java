@@ -57,12 +57,17 @@ public class BridgeImpl extends Bridge
         Launcher launcher = new Launcher();
         java.nio.file.Path path = null;
         try {
-        	//TODO for MD demo
-        	if(type.equals("ADOXX")){
-        		  path = launcher.chain(model, type.toString());
-        	}else if(type.equals("MD")){
-        		  path = launcher.chain2(model, type.toString());
-        	}
+        	switch (type) {
+			case MD:
+					path = launcher.chain2(model, type.toString());
+				break;
+			case ADOXX:
+					path = launcher.chain(model, type.toString());				
+				break;
+			default:
+					path = launcher.chain(model, type.toString());				
+				break;
+			}
         } catch (Exception e) {
             String message = String.format("Error in the transformation of type '%s'", type);
             System.err.println(message);

@@ -1,5 +1,6 @@
 package eu.learnpad.transformations.launchers;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -7,6 +8,11 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.Resource;
+
+import eu.learnpad.transformations.metamodel_corpus.xwiki.XwikiPackage;
 
 public class Launcher
 {
@@ -119,9 +125,12 @@ public class Launcher
         ATLTransformationLauncher transformLauncher = new ATLTransformationLauncher();
         
         //MD->ADOXX
-        InputStream transformInputStream2 = Files.newInputStream(mdModelPath);
+        
+        File modelInputFile = new File(mdModelPath.toString());
+        InputStream modelInputIS = new FileInputStream(modelInputFile);
+//        InputStream transformInputStream2 = Files.newInputStream(mdModelPath);
         OutputStream md2adoxxOutputStream = Files.newOutputStream(adoxxModelPath);
-        boolean isTransformed = transformLauncher.transform(transformInputStream2, "MD", md2adoxxOutputStream);
+        boolean isTransformed = transformLauncher.transform(modelInputIS, "MD", md2adoxxOutputStream);
         
         
 
@@ -129,12 +138,17 @@ public class Launcher
 //        OutputStream alignOutputStream2 = Files.newOutputStream(adoxxModelPath);
 //        boolean isAlign = alignLauncher.align(model, "ADOXX", alignOutputStream2);
 
+//        EPackage.Registry.INSTANCE.put(XwikiPackage.eNS_URI, XwikiPackage.eINSTANCE);
 
         // ADOXX->XWIKI
         InputStream transformInputStream = Files.newInputStream(adoxxModelPath);
         OutputStream transformOutputStream = Files.newOutputStream(xwikiModelPath);
         boolean isTransformed2 = transformLauncher.transform(transformInputStream, "ADOXX", transformOutputStream);
 
+        // Have to unregister them because if not, they stay loaded and are messing up with ATL module
+        // They are automatically loaded by Acceleo in the Generate class
+//        EPackage.Registry.INSTANCE.remove(XwikiPackage.eNS_URI);
+//        Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().remove("*");
         
         // WRITE
         AcceleoTransformationLauncher writeLauncher = new AcceleoTransformationLauncher();
@@ -145,7 +159,8 @@ public class Launcher
 //        alignOutputStream.close();
 //        alignOutputStream2.close();
         transformInputStream.close();
-        transformInputStream2.close();
+//        transformInputStream2.close();
+        modelInputIS.close();
         transformOutputStream.close();
         md2adoxxOutputStream.close();
         writeInputStream.close();
@@ -162,18 +177,31 @@ public class Launcher
     public static void main(String[] args) throws Exception
     {
 
-        // String model_in = "resources/model/ado4f16a6bb-9318-4908-84a7-c2d135253dc9.xml";
-        String model_in = "resources/model/learnpad.xmi";
+        String model_in = "resources/model/md_model_export.xmi";
         String file_out = "/tmp/testAlignmentOutputStream.xmi";
-//        String type = "ADOXX";
-         String type = "MD";
+
+        String type = "MD"; //ADOXX
 
         // create a new output stream
         OutputStream out = new FileOutputStream(file_out);
 
         Launcher launcher = new Launcher();
         FileInputStream fis = new FileInputStream(model_in);
+        
+        launcher.chain2(fis, type);
 
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         /*
          * ****************************************** ****ALIGNMENT EXAMPLE**********************
          * ******************************************
@@ -196,7 +224,7 @@ public class Launcher
          * ****************************************** ****CHAIN EXAMPLE*************************
          * ******************************************
          */
-         launcher.chain2(fis, type);
+        
 
     }
 }

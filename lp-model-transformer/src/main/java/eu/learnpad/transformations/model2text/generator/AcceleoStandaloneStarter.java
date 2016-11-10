@@ -55,6 +55,12 @@ public class AcceleoStandaloneStarter
     public void execute(InputStream model, Path resultFolderPath)
     {
         try {
+        	//Check if, for some errors in the execution, the tmp file already exists
+        	File existingFile = new File(modelXWikiAcceleoTmpPath.toString());
+        	if(existingFile.exists()){
+        		Files.delete(modelXWikiAcceleoTmpPath);
+        	}
+        	
             Files.copy(model, modelXWikiAcceleoTmpPath);
 
             URI modelURI = URI.createFileURI(modelXWikiAcceleoTmpPath.toString());

@@ -61,4 +61,4 @@ cp -r "target/lib" "${__OUT_PATH__}/"
 cp -r "target/lp-model-transformer-1.0-SNAPSHOT.jar" "${__OUT_PATH__}/"
 }
 
-component_build && component_test && component_install
+component_build && component_install

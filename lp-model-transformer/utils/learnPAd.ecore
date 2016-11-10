@@ -25,26 +25,26 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BPMNModel" eSuperTypes="#//LPAdBaseModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="processes" upperBound="-1"
-        eType="ecore:EClass /tmp/learnpad/mt/BPMN20.ecore#//Process" containment="true"/>
+        eType="ecore:EClass BPMN20.ecore#//Process" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BMMModel" eSuperTypes="#//LPAdBaseModel">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="motivationProcess" eType="ecore:EClass /tmp/learnpad/mt/BMM.ecore#//BusinessProcess"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="motivationProcess" eType="ecore:EClass BMM.ecore#//BusinessProcess"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompetencyModel" eSuperTypes="#//LPAdBaseModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="competencyRootContainer"
-        eType="ecore:EClass /tmp/learnpad/mt/Competency.ecore#//CompetencyRootContainer" containment="true"/>
+        eType="ecore:EClass Competency.ecore#//CompetencyRootContainer" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DKModel" eSuperTypes="#//LPAdBaseModel">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="document" eType="ecore:EClass /tmp/learnpad/mt/DocumentAndKnowledge.ecore#//DocumentRoot"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="document" eType="ecore:EClass DocumentAndKnowledge.ecore#//DocumentRoot"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OrganisationalModel" eSuperTypes="#//LPAdBaseModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="organisationalUnits" upperBound="-1"
-        eType="ecore:EClass /tmp/learnpad/mt/Organisational.ecore#//OrganisationalUnit" containment="true"/>
+        eType="ecore:EClass Organisational.ecore#//OrganisationalUnit" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="KPIModel" eSuperTypes="#//LPAdBaseModel">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="learningGoal" eType="ecore:EClass /tmp/learnpad/mt/kpi.ecore#//LearningGoal"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="learningGoal" eType="ecore:EClass kpi.ecore#//LearningGoal"
         containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

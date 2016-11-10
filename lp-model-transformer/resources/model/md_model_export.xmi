@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="ASCII"?>
+<lpad:LPAdRoot
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI"
+    xmlns:lpad="http://learnpad.eu"
+    xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI bpmn2.0/BPMN20.ecore http://learnpad.eu learnPAd.ecore"
+    id="eee_1045467100313_135436_1"
+    name="Monti Azzuri"
+    version="">
+  <bpmnModels
+      id="eee_1045467100313_135436_1_1"
+      name="Titolo Unico Process"
+      version="">
+    <processes
+        id="_18_0_4_8f30289_1447830895537_881465_21482"
+        name="Monti Azzurri">
+      <documentation
+          text="In the case of &#x201c;Titolo Unico&#x201d;, the entrepreneur applies for opening the activity and he/she has to wait for feedback by the administration before starting the business activity. The application has to be electronically delivered, by the entrepreneur, to the SUAP office. Such application consists in reporting details activity, location, etc. SUAP office forwards the request to the municipality offices and third parties administrations involved in the verification activity. They check the correctness of the request and provide feedbacks to the SUAP office in order to clarify if the request is acceptable or not. Municipality offices and third parties can also ask the entrepreneur for some integration if some data are missing or wrong. In case the request is particularly complex to manage, at any time SUAP office can organize the &#x201c;Conferenza dei Servizi&#x201d; (CdS) (named in English Service Conference) that is a meeting in which all involved participants (municipality offices, third party administrations, and entrepreneur) discuss about the case and decide if the business activity is acceptable or not. At the end, the acceptance or the rejection for the request to start the activity is provided to the entrepreneur. &#xA;"/>
+      <ioSpecification
+          id="eee_1045467100313_135436_1_2">
+        <dataInputs
+            id="_18_0_5_8f30289_1466053565766_876644_22866"
+            name="Instance"/>
+        <dataInputs
+            id="_18_0_4_8f30289_1447832371345_238050_22494"
+            name="Party Opinion"/>
+        <dataOutputs
+            id="_18_0_4_8f30289_1447831958203_282976_22149"
+            name="Titolo Unico"/>
+        <dataOutputs
+            id="_18_0_5_8f30289_1466053789948_813109_22909"
+            name="Instance Integration"/>
+        <dataOutputs
+            id="_18_0_5_8f30289_1477557818903_571109_21709"
+            name="Conditions"/>
+        <inputSets
+            id="eee_1045467100313_135436_1_3"
+            dataInputRefs="_18_0_5_8f30289_1466053565766_876644_22866"
+            name="InstanceSet"/>
+        <inputSets
+            id="eee_1045467100313_135436_1_4"
+            dataInputRefs="_18_0_4_8f30289_1447832371345_238050_22494"
+            name="3rdPartyOpinionSet"/>
+        <outputSets
+            id="eee_1045467100313_135436_1_5"
+            dataOutputRefs="_18_0_5_8f30289_1466053789948_813109_22909"
+            name="Instance Integration"/>
+        <outputSets
+            id="eee_1045467100313_135436_1_6"
+            dataOutputRefs="_18_0_4_8f30289_1447831958203_282976_22149"
+            name="TitoloUnicoSet"/>
+        <outputSets
+            id="eee_1045467100313_135436_1_7"
+            dataOutputRefs="_18_0_5_8f30289_1477557818903_571109_21709"
+            name="Conditions"/>
+      </ioSpecification>
+      <laneSets
+          id="_18_0_4_8f30289_1447830921364_504677_21498_Ref-1_laneSet"
+          name="LaneSet1">
+        <lanes
+            id="_18_0_4_8f30289_1447830921364_504677_21498"
+            name="Enterpreneur"
+            partitionElementRef="_18_0_4_8f30289_1448015200939_520794_21883">
+          <partitionElement
+              xsi:type="bpmn2:Collaboration"
+              id="eee_1045467100313_135436_1_8"
+              name="__CONTAINER__COLLABORATION__">
+            <messageFlows
+                id="_18_0_4_8f30289_1447831167124_355775_21698"
+                name=""
+                sourceRef="_18_0_4_8f30289_1447831147750_749629_21667"
+                targetRef="_18_0_4_8f30289_1447830921364_504677_21498"/>
+            <messageFlows
+                id="_18_0_4_8f30289_1447831816411_456244_22142"
+                name=""
+                sourceRef="_18_0_4_8f30289_1447831604017_683699_22010"
+                targetRef="_18_0_4_8f30289_1447830921364_504677_21498"/>
+            <messageFlows
+                id="_18_0_5_8f30289_1466054062630_410784_23003"
+                name=""
+                sourceRef="_18_0_5_8f30289_1466053954770_54952_22973"
+                targetRef="_18_0_4_8f30289_1447830921364_504677_21498"/>
+            <messageFlows
+                id="_18_0_4_8f30289_1447832084119_118318_22179"
+                name=""
+                sourceRef="_18_0_4_8f30289_1447830921364_504677_21498"
+                targetRef="_18_0_4_8f30289_1447831065594_945826_21533"/>
+            <messageFlows
+                id="_18_0_5_8f30289_1477556995667_241009_21477"
+                name=""
+                sourceRef="_18_0_4_8f30289_1447830921364_504677_21498"
+                targetRef="_18_0_5_8f30289_1455657316623_363242_24411"/>
+          </partitionElement>
+        </lanes>
+      </laneSets>
+      <laneSets
+          id="_18_0_4_8f30289_1447831007612_34391_21513_Ref-1_laneSet"
+          name="LaneSet2">
+        <lanes
+            id="_18_0_4_8f30289_1447831007612_34391_21513"
+            name="Sportello compensoria le or sportello minicipale"
+            partitionElementRef="_18_0_5_8f30289_1455657685689_622107_24566">
+          <partitionElement
+              xsi:type="bpmn2:Collaboration"
+              id="eee_1045467100313_135436_1_9"
+              name="__CONTAINER__COLLABORATION__">
+            <messageFlows
+                id="_18_0_4_8f30289_1447832332937_513992_22463"
+                name=""
+                sourceRef="_18_0_4_8f30289_1447832169602_99725_22197"
+                targetRef="_18_0_4_8f30289_1447832313775_557401_22412"/>
+            <messageFlows
+                id="_18_0_4_8f30289_1447832329020_438_22457"
+                name=""
+                sourceRef="_18_0_4_8f30289_1447832283952_760609_22354"
+                targetRef="_18_0_4_8f30289_1447832169602_99725_22197"/>
+            <messageFlows
+                id="_18_0_4_8f30289_1448015152034_69666_21736"
+                name=""
+                sourceRef="_18_0_4_8f30289_1448015152031_595616_21729"
+                targetRef="_18_0_4_8f30289_1448015152028_393633_21725"/>
+            <messageFlows
+                id="_18_0_4_8f30289_1448015152034_348698_21737"
+                name=""
+                sourceRef="_18_0_4_8f30289_1448015152032_716149_21730"
+                targetRef="_18_0_4_8f30289_1448015152028_393633_21725"/>
+          </partitionElement>
+          <childLaneSet
+              id="_18_0_4_8f30289_1448208149977_460614_20984_Ref-1_laneSet"
+              name="LaneSet3">
+            <lanes
+                id="_18_0_4_8f30289_1448208149977_460614_20984"
+                flowNodeRefs="_18_0_4_8f30289_1447831106112_952864_21615 _18_0_4_8f30289_1447831604017_683699_22010 _18_0_5_8f30289_1466053849655_107648_22943 _18_0_5_8f30289_1477557148520_156006_21522 _18_0_5_8f30289_1477557062066_730771_21491 _18_0_4_8f30289_1447831262643_936055_21845 _18_0_4_8f30289_1447831576999_247788_21976 _18_0_4_8f30289_1447831237944_454682_21783 _18_0_4_8f30289_1447831180529_92708_21711 _18_0_5_8f30289_1455657316623_363242_24411 _18_0_4_8f30289_1447831252642_595717_21817 _18_0_5_8f30289_1477557179717_550082_21555 _18_0_4_8f30289_1447831147750_749629_21667 _18_0_5_8f30289_1455657169901_994438_24366 _18_0_5_8f30289_1466053954770_54952_22973 _18_0_4_8f30289_1447831065594_945826_21533 _18_0_5_8f30289_1477557562770_457005_21598 _18_0_5_8f30289_1455657356303_103761_24474 _18_0_4_8f30289_1447831769451_470466_22099"
+                name="SUAP Office">
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_4_8f30289_1447831750742_133987_22091"
+                  name="Amendment not necessary"
+                  sourceRef="_18_0_5_8f30289_1466053849655_107648_22943"
+                  targetRef="_18_0_4_8f30289_1447831576999_247788_21976"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_4_8f30289_1447831221567_697983_21773"
+                  name="Application rejected"
+                  sourceRef="_18_0_4_8f30289_1447831106112_952864_21615"
+                  targetRef="_18_0_4_8f30289_1447831147750_749629_21667"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_4_8f30289_1448015152034_839767_21734"
+                  name=""
+                  sourceRef="_18_0_4_8f30289_1448015152031_595616_21729"
+                  targetRef="_18_0_4_8f30289_1448015152032_716149_21730"/>
+              <partitionElement
+                  xsi:type="bpmn2:ExclusiveGateway"
+                  id="_18_0_4_8f30289_1447831106112_952864_21615"
+                  name="gtw1"
+                  incoming="_18_0_5_8f30289_1455657169869_723703_24358"
+                  outgoing="_18_0_4_8f30289_1447831216690_977644_21764 _18_0_4_8f30289_1447831221567_697983_21773"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_5_8f30289_1455657316596_438512_24403"
+                  name="Amendment&#xA; necessary"
+                  sourceRef="_18_0_5_8f30289_1466053954770_54952_22973"
+                  targetRef="_18_0_5_8f30289_1455657316623_363242_24411"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_5_8f30289_1455732048482_433005_26479"
+                  name=""
+                  sourceRef="_18_0_5_8f30289_1466054827284_95984_23128"
+                  targetRef="_18_0_5_8f30289_1466054810221_528014_23111"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_4_8f30289_1447831694160_509741_22037"
+                  name="Without conditions"
+                  sourceRef="_18_0_5_8f30289_1477557179717_550082_21555"
+                  targetRef="_18_0_4_8f30289_1447831604017_683699_22010"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_5_8f30289_1455657169869_723703_24358"
+                  name=""
+                  sourceRef="_18_0_5_8f30289_1455657169901_994438_24366"
+                  targetRef="_18_0_4_8f30289_1447831106112_952864_21615"/>
+              <partitionElement
+                  xsi:type="bpmn2:SendTask"
+                  id="_18_0_4_8f30289_1447831604017_683699_22010"
+                  name="Send Authorization Document"
+                  incoming="_18_0_4_8f30289_1447831694160_509741_22037"
+                  outgoing="_18_0_5_8f30289_1477557063639_923538_21502">
+                <documentation
+                    text="In this activity the SUAP office sends to the entrepreneur the permission to start the manufacturing activity."/>
+                <properties
+                    id="_18_0_4_8f30289_1447831604017_683699_22010_pin_in"
+                    name="Send Authorization Document_pin_in"/>
+                <dataOutputAssociations
+                    id="_18_0_4_8f30289_1447831977126_65768_22172"
+                    sourceRef="_18_0_4_8f30289_1447831604017_683699_22010_pin_in"
+                    targetRef="_18_0_4_8f30289_1447831958203_282976_22149"/>
+              </partitionElement>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_5_8f30289_1455657316602_768128_24406"
+                  name=""
+                  sourceRef="_18_0_5_8f30289_1455657316623_363242_24411"
+                  targetRef="_18_0_4_8f30289_1447831576999_247788_21976"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_4_8f30289_1447831317716_483_21957"
+                  name=""
+                  sourceRef="_18_0_4_8f30289_1447831252642_595717_21817"
+                  targetRef="_18_0_4_8f30289_1447831262643_936055_21845"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_5_8f30289_1455657356272_103947_24466"
+                  name=""
+                  sourceRef="_18_0_5_8f30289_1455657356303_103761_24474"
+                  targetRef="_18_0_5_8f30289_1477557062066_730771_21491"/>
+              <partitionElement
+                  xsi:type="bpmn2:ExclusiveGateway"
+                  id="_18_0_5_8f30289_1466053849655_107648_22943"
+                  name="gtw4"
+                  incoming="_18_0_5_8f30289_1466053850867_146028_22954"
+                  outgoing="_18_0_4_8f30289_1447831750742_133987_22091 _18_0_5_8f30289_1466053955961_456293_22991"/>
+              <partitionElement
+                  xsi:type="bpmn2:ExclusiveGateway"
+                  id="_18_0_5_8f30289_1477557148520_156006_21522"
+                  name="gtw6"
+                  incoming="_18_0_5_8f30289_1477557154298_660424_21535"
+                  outgoing="_18_0_5_8f30289_1455657356279_106401_24469 _18_0_5_8f30289_1477557183464_567633_21568"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_5_8f30289_1466053850867_146028_22954"
+                  name=""
+                  sourceRef="_18_0_4_8f30289_1447831262643_936055_21845"
+                  targetRef="_18_0_5_8f30289_1466053849655_107648_22943"/>
+              <partitionElement
+                  xsi:type="bpmn2:ExclusiveGateway"
+                  id="_18_0_5_8f30289_1477557062066_730771_21491"
+                  name="gtw8"
+                  incoming="_18_0_4_8f30289_1447831808689_426392_22135 _18_0_5_8f30289_1455657356272_103947_24466 _18_0_5_8f30289_1477557063639_923538_21502 _18_0_5_8f30289_1477557630793_676903_21659"
+                  outgoing="_18_0_4_8f30289_1447831794187_778100_22117"/>
+              <partitionElement
+                  xsi:type="bpmn2:BoundaryEvent"
+                  id="_18_0_4_8f30289_1447831297121_905738_21914"
+                  name="bnd2"
+                  outgoing="_18_0_4_8f30289_1447831303881_665645_21939"
+                  attachedToRef="_18_0_5_8f30289_1455657316623_363242_24411"/>
+              <partitionElement
+                  xsi:type="bpmn2:ExclusiveGateway"
+                  id="_18_0_4_8f30289_1447831262643_936055_21845"
+                  name="gtw3"
+                  incoming="_18_0_4_8f30289_1447831271760_324063_21864 _18_0_4_8f30289_1447831317716_483_21957"
+                  outgoing="_18_0_5_8f30289_1466053850867_146028_22954"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_5_8f30289_1477557630793_676903_21659"
+                  name=""
+                  sourceRef="_18_0_5_8f30289_1477557562770_457005_21598"
+                  targetRef="_18_0_5_8f30289_1477557062066_730771_21491"/>
+              <partitionElement
+                  xsi:type="bpmn2:ExclusiveGateway"
+                  id="_18_0_4_8f30289_1447831576999_247788_21976"
+                  name="gtw5"
+                  incoming="_18_0_4_8f30289_1447831750742_133987_22091 _18_0_5_8f30289_1455657316602_768128_24406"
+                  outgoing="_18_0_5_8f30289_1477557154298_660424_21535"/>
+              <partitionElement
+                  xsi:type="bpmn2:ExclusiveGateway"
+                  id="_18_0_4_8f30289_1447831237944_454682_21783"
+                  name="gtw2"
+                  incoming="_18_0_4_8f30289_1447831247467_897710_21803 _18_0_4_8f30289_1447831303881_665645_21939"
+                  outgoing="_18_0_4_8f30289_1447831308786_429708_21948"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_4_8f30289_1447831271760_324063_21864"
+                  name=""
+                  sourceRef="_18_0_4_8f30289_1447831180529_92708_21711"
+                  targetRef="_18_0_4_8f30289_1447831262643_936055_21845"/>
+              <partitionElement
+                  xsi:type="bpmn2:SubProcess"
+                  id="_18_0_4_8f30289_1447831180529_92708_21711"
+                  name="Check Application"
+                  incoming="_18_0_4_8f30289_1447831216690_977644_21764"
+                  outgoing="_18_0_4_8f30289_1447831271760_324063_21864">
+                <documentation
+                    text="In this activity the Agricolture office and third party administration checks the documents and certificates in order to verify that there are no restrictions."/>
+              </partitionElement>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_4_8f30289_1447831216690_977644_21764"
+                  name="Application Accepted"
+                  sourceRef="_18_0_4_8f30289_1447831106112_952864_21615"
+                  targetRef="_18_0_4_8f30289_1447831180529_92708_21711"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_5_8f30289_1455657356279_106401_24469"
+                  name="Inhibition"
+                  sourceRef="_18_0_5_8f30289_1477557148520_156006_21522"
+                  targetRef="_18_0_5_8f30289_1455657356303_103761_24474"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_4_8f30289_1447832323704_366073_22450"
+                  name=""
+                  sourceRef="_18_0_4_8f30289_1447832283952_760609_22354"
+                  targetRef="_18_0_4_8f30289_1447832313775_557401_22412"/>
+              <partitionElement
+                  xsi:type="bpmn2:Task"
+                  id="_18_0_5_8f30289_1455657316623_363242_24411"
+                  name="Check Integration"
+                  incoming="_18_0_5_8f30289_1455657316596_438512_24403"
+                  outgoing="_18_0_5_8f30289_1455657316602_768128_24406">
+                <documentation
+                    text="In this activity the SUAP office has to send to the entrepreneur a request for integrations and manage received integrations.&#xA;The data object &#x201c;Integrazione Instanza&#x201d; is generated in this activity."/>
+                <properties
+                    id="_18_0_5_8f30289_1455657316623_363242_24411_pin_in"
+                    name="Check Integration_pin_in"/>
+                <dataOutputAssociations
+                    id="_18_0_5_8f30289_1466053795385_515086_22931"
+                    sourceRef="_18_0_5_8f30289_1455657316623_363242_24411_pin_in"
+                    targetRef="_18_0_5_8f30289_1466053789948_813109_22909"/>
+              </partitionElement>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_5_8f30289_1466053955961_456293_22991"
+                  name="Amendment&#xA; necessary"
+                  sourceRef="_18_0_5_8f30289_1466053849655_107648_22943"
+                  targetRef="_18_0_5_8f30289_1466053954770_54952_22973"/>
+              <partitionElement
+                  xsi:type="bpmn2:SubProcess"
+                  id="_18_0_4_8f30289_1447831252642_595717_21817"
+                  name="Manage Service Conference"
+                  incoming="_18_0_4_8f30289_1447831308786_429708_21948"
+                  outgoing="_18_0_4_8f30289_1447831317716_483_21957">
+                <documentation
+                    text="In this activity the SUAP office announces the Service Conference."/>
+              </partitionElement>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_4_8f30289_1448015152033_95853_21733"
+                  name=""
+                  sourceRef="_18_0_4_8f30289_1448015152031_963212_21728"
+                  targetRef="_18_0_4_8f30289_1448015152031_595616_21729"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_5_8f30289_1466054828409_631161_23140"
+                  name=""
+                  sourceRef="_18_0_5_8f30289_1455731840087_772227_26429"
+                  targetRef="_18_0_5_8f30289_1466054827284_95984_23128"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_5_8f30289_1455731999574_228977_26458"
+                  name=""
+                  sourceRef="_18_0_4_8f30289_1447832313775_557401_22412"
+                  targetRef="_18_0_4_8f30289_1447832337480_970820_22468"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_5_8f30289_1455731782870_77844_26423"
+                  name=""
+                  sourceRef="_18_0_5_8f30289_1455731714450_202864_26383"
+                  targetRef="_18_0_5_8f30289_1466054827284_95984_23128"/>
+              <partitionElement
+                  xsi:type="bpmn2:ExclusiveGateway"
+                  id="_18_0_5_8f30289_1477557179717_550082_21555"
+                  name="gtw7"
+                  incoming="_18_0_5_8f30289_1477557183464_567633_21568"
+                  outgoing="_18_0_4_8f30289_1447831694160_509741_22037 _18_0_5_8f30289_1477557619910_627591_21630"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_5_8f30289_1477557063639_923538_21502"
+                  name=""
+                  sourceRef="_18_0_4_8f30289_1447831604017_683699_22010"
+                  targetRef="_18_0_5_8f30289_1477557062066_730771_21491"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_5_8f30289_1477557183464_567633_21568"
+                  name="No inhibition"
+                  sourceRef="_18_0_5_8f30289_1477557148520_156006_21522"
+                  targetRef="_18_0_5_8f30289_1477557179717_550082_21555"/>
+              <partitionElement
+                  xsi:type="bpmn2:SendTask"
+                  id="_18_0_4_8f30289_1447831147750_749629_21667"
+                  name="Send Communication &#x43e;f non-ammissible"
+                  incoming="_18_0_4_8f30289_1447831221567_697983_21773"
+                  outgoing="_18_0_4_8f30289_1447831808689_426392_22135">
+                <documentation
+                    text="In this activity the SUAP office has to communicate to the entrepreneur the inadmissibility of the request."/>
+              </partitionElement>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_4_8f30289_1447831308786_429708_21948"
+                  name=""
+                  sourceRef="_18_0_4_8f30289_1447831237944_454682_21783"
+                  targetRef="_18_0_4_8f30289_1447831252642_595717_21817"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_4_8f30289_1447831808689_426392_22135"
+                  name=""
+                  sourceRef="_18_0_4_8f30289_1447831147750_749629_21667"
+                  targetRef="_18_0_5_8f30289_1477557062066_730771_21491"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_4_8f30289_1447831794187_778100_22117"
+                  name=""
+                  sourceRef="_18_0_5_8f30289_1477557062066_730771_21491"
+                  targetRef="_18_0_4_8f30289_1447831769451_470466_22099"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_4_8f30289_1447831303881_665645_21939"
+                  name=""
+                  sourceRef="_18_0_4_8f30289_1447831297121_905738_21914"
+                  targetRef="_18_0_4_8f30289_1447831237944_454682_21783"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_5_8f30289_1466053580189_78162_22898"
+                  name=""
+                  sourceRef="_18_0_4_8f30289_1447831065594_945826_21533"
+                  targetRef="_18_0_5_8f30289_1455657169901_994438_24366"/>
+              <partitionElement
+                  xsi:type="bpmn2:BoundaryEvent"
+                  id="_18_0_4_8f30289_1447831197274_537211_21739"
+                  name="bnd1"
+                  outgoing="_18_0_4_8f30289_1447831247467_897710_21803"
+                  attachedToRef="_18_0_4_8f30289_1447831180529_92708_21711"/>
+              <partitionElement
+                  xsi:type="bpmn2:Task"
+                  id="_18_0_5_8f30289_1455657169901_994438_24366"
+                  name="Assess Application"
+                  incoming="_18_0_5_8f30289_1466053580189_78162_22898"
+                  outgoing="_18_0_5_8f30289_1455657169869_723703_24358">
+                <documentation
+                    text="In this activity the SUAP office has to check the documentation and certificates sent by the entrepreneur."/>
+                <properties
+                    id="_18_0_5_8f30289_1455657169901_994438_24366_pin_out"
+                    name="Assess Application_pin_out"/>
+                <dataInputAssociations
+                    id="_18_0_5_8f30289_1466053576573_758919_22889"
+                    sourceRef="_18_0_5_8f30289_1466053565766_876644_22866"
+                    targetRef="_18_0_5_8f30289_1455657169901_994438_24366_pin_out"/>
+              </partitionElement>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_5_8f30289_1466054673294_585040_23088"
+                  name=""
+                  sourceRef="_18_0_4_8f30289_1447832207677_70942_22230"
+                  targetRef="_18_0_4_8f30289_1447832271422_183266_22314"/>
+              <partitionElement
+                  xsi:type="bpmn2:Task"
+                  id="_18_0_5_8f30289_1466053954770_54952_22973"
+                  name="Integration Request"
+                  incoming="_18_0_5_8f30289_1466053955961_456293_22991"
+                  outgoing="_18_0_5_8f30289_1455657316596_438512_24403"/>
+              <partitionElement
+                  xsi:type="bpmn2:StartEvent"
+                  id="_18_0_4_8f30289_1447831065594_945826_21533"
+                  name="Start"
+                  outgoing="_18_0_5_8f30289_1466053580189_78162_22898">
+                <documentation
+                    text="The process start when the SUAP office receives the SCIA request from the entrepreneur."/>
+              </partitionElement>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_5_8f30289_1477557619910_627591_21630"
+                  name="With conditions"
+                  sourceRef="_18_0_5_8f30289_1477557179717_550082_21555"
+                  targetRef="_18_0_5_8f30289_1477557562770_457005_21598"/>
+              <partitionElement
+                  xsi:type="bpmn2:Task"
+                  id="_18_0_5_8f30289_1477557562770_457005_21598"
+                  name="Send authorization Under Condition"
+                  incoming="_18_0_5_8f30289_1477557619910_627591_21630"
+                  outgoing="_18_0_5_8f30289_1477557630793_676903_21659">
+                <properties
+                    id="_18_0_5_8f30289_1477557562770_457005_21598_pin_in"
+                    name="Send authorization Under Condition_pin_in"/>
+                <dataOutputAssociations
+                    id="_18_0_5_8f30289_1477557656269_276235_21668"
+                    sourceRef="_18_0_5_8f30289_1477557562770_457005_21598_pin_in"
+                    targetRef="_18_0_4_8f30289_1447831958203_282976_22149"/>
+                <dataOutputAssociations
+                    id="_18_0_5_8f30289_1477557838514_297828_21732"
+                    sourceRef="_18_0_5_8f30289_1477557562770_457005_21598_pin_in"
+                    targetRef="_18_0_5_8f30289_1477557818903_571109_21709"/>
+              </partitionElement>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_5_8f30289_1466055087795_844796_23169"
+                  name=""
+                  sourceRef="_18_0_4_8f30289_1448015152032_716149_21730"
+                  targetRef="_18_0_4_8f30289_1448015152033_15297_21731"/>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_5_8f30289_1477557154298_660424_21535"
+                  name=""
+                  sourceRef="_18_0_4_8f30289_1447831576999_247788_21976"
+                  targetRef="_18_0_5_8f30289_1477557148520_156006_21522"/>
+              <partitionElement
+                  xsi:type="bpmn2:Task"
+                  id="_18_0_5_8f30289_1455657356303_103761_24474"
+                  name="Manage Inhibition"
+                  incoming="_18_0_5_8f30289_1455657356279_106401_24469"
+                  outgoing="_18_0_5_8f30289_1455657356272_103947_24466">
+                <documentation
+                    text="In this activity the SUAP office has to send a communication to the entrepreneur in order to inform that he cannot start his manufacturing activity."/>
+              </partitionElement>
+              <partitionElement
+                  xsi:type="bpmn2:EndEvent"
+                  id="_18_0_4_8f30289_1447831769451_470466_22099"
+                  name="End"
+                  incoming="_18_0_4_8f30289_1447831794187_778100_22117">
+                <documentation
+                    text="The process is terminated"/>
+              </partitionElement>
+              <partitionElement
+                  xsi:type="bpmn2:SequenceFlow"
+                  id="_18_0_4_8f30289_1447831247467_897710_21803"
+                  name=""
+                  sourceRef="_18_0_4_8f30289_1447831197274_537211_21739"
+                  targetRef="_18_0_4_8f30289_1447831237944_454682_21783"/>
+            </lanes>
+          </childLaneSet>
+        </lanes>
+      </laneSets>
+      <laneSets
+          id="_18_0_4_8f30289_1447832169602_99725_22197_Ref-1_laneSet"
+          name="LaneSet4">
+        <lanes
+            id="_18_0_4_8f30289_1447832169602_99725_22197"
+            name="Third Party PA"
+            partitionElementRef="_18_0_4_8f30289_1448015495321_604836_22008"/>
+      </laneSets>
+      <laneSets
+          id="_18_0_4_8f30289_1447832243202_155141_22265_Ref-1_laneSet"
+          name="LaneSet5">
+        <lanes
+            id="_18_0_4_8f30289_1447832243202_155141_22265"
+            flowNodeRefs="_18_0_4_8f30289_1447832313775_557401_22412 _18_0_4_8f30289_1447832337480_970820_22468 _18_0_4_8f30289_1447832271422_183266_22314 _18_0_4_8f30289_1447832207677_70942_22230 _18_0_4_8f30289_1447832283952_760609_22354 _18_0_5_8f30289_1466054827284_95984_23128 _18_0_5_8f30289_1466054810221_528014_23111"
+            name="Monti Azzurri Consortium"
+            partitionElementRef="_18_0_5_8f30289_1455657685689_622107_24566">
+          <partitionElement
+              xsi:type="bpmn2:BoundaryEvent"
+              id="_18_0_5_8f30289_1455731840087_772227_26429"
+              name="Inconsistant Integration"
+              outgoing="_18_0_5_8f30289_1466054828409_631161_23140"
+              attachedToRef="_18_0_4_8f30289_1447832271422_183266_22314"/>
+          <partitionElement
+              xsi:type="bpmn2:ReceiveTask"
+              id="_18_0_4_8f30289_1447832313775_557401_22412"
+              name="Receive Check of 3rd Party"
+              incoming="_18_0_4_8f30289_1447832323704_366073_22450"
+              outgoing="_18_0_5_8f30289_1455731999574_228977_26458">
+            <documentation
+                text="In this activity the SUAP office receive results of the checks performed by other PAs and municipality offices."/>
+            <properties
+                id="_18_0_4_8f30289_1447832313775_557401_22412_pin_out"
+                name="Receive Check of 3rd Party_pin_out"/>
+            <dataInputAssociations
+                id="_18_0_5_8f30289_1466054731257_350293_23103"
+                sourceRef="_18_0_4_8f30289_1447832371345_238050_22494"
+                targetRef="_18_0_4_8f30289_1447832313775_557401_22412_pin_out"/>
+          </partitionElement>
+          <partitionElement
+              xsi:type="bpmn2:EndEvent"
+              id="_18_0_4_8f30289_1447832337480_970820_22468"
+              name="Application &#xA;Valid"
+              incoming="_18_0_5_8f30289_1455731999574_228977_26458">
+            <documentation
+                text="The subprocess &quot;Manage of 3rd Party Admin&quot; related to the SUAP Office is terminated"/>
+          </partitionElement>
+          <partitionElement
+              xsi:type="bpmn2:Task"
+              id="_18_0_4_8f30289_1447832271422_183266_22314"
+              name="First Document Check"
+              incoming="_18_0_5_8f30289_1466054673294_585040_23088">
+            <documentation
+                text="In this activity the office checks the documents in order to verify that there is not environmental restrictions. The data object &#x201c;Instanza&#x201d; is requested to perform this activity."/>
+            <properties
+                id="_18_0_4_8f30289_1447832271422_183266_22314_pin_out"
+                name="First Document Check_pin_out"/>
+            <dataInputAssociations
+                id="_18_0_5_8f30289_1477029660100_655893_21534"
+                sourceRef="_18_0_5_8f30289_1466053565766_876644_22866"
+                targetRef="_18_0_4_8f30289_1447832271422_183266_22314_pin_out"/>
+          </partitionElement>
+          <partitionElement
+              xsi:type="bpmn2:StartEvent"
+              id="_18_0_4_8f30289_1447832207677_70942_22230"
+              name="Start"
+              outgoing="_18_0_5_8f30289_1466054673294_585040_23088">
+            <documentation
+                text="The subprocess &quot;Manage of 3rd Party Admin&quot; is started"/>
+          </partitionElement>
+          <partitionElement
+              xsi:type="bpmn2:SendTask"
+              id="_18_0_4_8f30289_1447832283952_760609_22354"
+              name="Send Instance to Third party"
+              outgoing="_18_0_4_8f30289_1447832323704_366073_22450">
+            <documentation
+                text="In this activity the SUAP office has to send to PAs and municipality offices documentation and certificates for the checking."/>
+            <properties
+                id="_18_0_4_8f30289_1447832283952_760609_22354_pin_out"
+                name="Send Instance to Third party_pin_out"/>
+            <dataInputAssociations
+                id="_18_0_5_8f30289_1477029655959_986227_21524"
+                sourceRef="_18_0_5_8f30289_1466053565766_876644_22866"
+                targetRef="_18_0_4_8f30289_1447832283952_760609_22354_pin_out"/>
+          </partitionElement>
+          <partitionElement
+              xsi:type="bpmn2:ExclusiveGateway"
+              id="_18_0_5_8f30289_1466054827284_95984_23128"
+              name="gtw ch appl 1"
+              incoming="_18_0_5_8f30289_1455731782870_77844_26423 _18_0_5_8f30289_1466054828409_631161_23140"
+              outgoing="_18_0_5_8f30289_1455732048482_433005_26479"/>
+          <partitionElement
+              xsi:type="bpmn2:EndEvent"
+              id="_18_0_5_8f30289_1466054810221_528014_23111"
+              name="Application not valid"
+              incoming="_18_0_5_8f30289_1455732048482_433005_26479"/>
+          <partitionElement
+              xsi:type="bpmn2:BoundaryEvent"
+              id="_18_0_5_8f30289_1455731714450_202864_26383"
+              name="bnd"
+              outgoing="_18_0_5_8f30289_1455731782870_77844_26423"
+              attachedToRef="_18_0_4_8f30289_1447832313775_557401_22412"/>
+        </lanes>
+      </laneSets>
+      <laneSets
+          id="_18_0_4_8f30289_1448015152028_393633_21725_Ref-1_laneSet"
+          name="LaneSet6">
+        <lanes
+            id="_18_0_4_8f30289_1448015152028_393633_21725"
+            name="Third Party PA"
+            partitionElementRef="_18_0_4_8f30289_1448015495321_604836_22008"/>
+      </laneSets>
+      <laneSets
+          id="_18_0_4_8f30289_1448015152029_209652_21726_Ref-1_laneSet"
+          name="LaneSet7">
+        <lanes
+            id="_18_0_4_8f30289_1448015152029_209652_21726"
+            name="Sportello compensoria le or spoetello minicipale"
+            partitionElementRef="_18_0_5_8f30289_1455657685689_622107_24566">
+          <childLaneSet
+              id="_18_0_5_8f30289_1455657847262_545085_24608_Ref-1_laneSet"
+              name="LaneSet8">
+            <lanes
+                id="_18_0_5_8f30289_1455657847262_545085_24608"
+                flowNodeRefs="_18_0_4_8f30289_1448015152031_595616_21729 _18_0_4_8f30289_1448015152031_963212_21728 _18_0_4_8f30289_1448015152033_15297_21731 _18_0_4_8f30289_1448015152032_716149_21730"
+                name="SUAP Office">
+              <partitionElement
+                  xsi:type="bpmn2:Task"
+                  id="_18_0_4_8f30289_1448015152031_595616_21729"
+                  name="Activate Service Conference"
+                  incoming="_18_0_4_8f30289_1448015152033_95853_21733"
+                  outgoing="_18_0_4_8f30289_1448015152034_839767_21734">
+                <documentation
+                    text="In this activity the SUAP office announces the Service Conference calling each participant."/>
+                <properties
+                    id="_18_0_4_8f30289_1448015152031_595616_21729_pin_out"
+                    name="Activate Service Conference_pin_out"/>
+                <dataInputAssociations
+                    id="_18_0_5_8f30289_1477029778607_679065_21570"
+                    sourceRef="_18_0_5_8f30289_1466053565766_876644_22866"
+                    targetRef="_18_0_4_8f30289_1448015152031_595616_21729_pin_out"/>
+              </partitionElement>
+              <partitionElement
+                  xsi:type="bpmn2:StartEvent"
+                  id="_18_0_4_8f30289_1448015152031_963212_21728"
+                  name="Service &#xA;Conference &#xA;Activation"
+                  outgoing="_18_0_4_8f30289_1448015152033_95853_21733"/>
+              <partitionElement
+                  xsi:type="bpmn2:EndEvent"
+                  id="_18_0_4_8f30289_1448015152033_15297_21731"
+                  name="Service&#xA;Congference&#xA;Termination"
+                  incoming="_18_0_5_8f30289_1466055087795_844796_23169"/>
+              <partitionElement
+                  xsi:type="bpmn2:Task"
+                  id="_18_0_4_8f30289_1448015152032_716149_21730"
+                  name="Receive Confirmation"
+                  incoming="_18_0_4_8f30289_1448015152034_839767_21734"
+                  outgoing="_18_0_5_8f30289_1466055087795_844796_23169">
+                <documentation
+                    text="In this activity the SUAP office requests the opinion of the Service Conference."/>
+              </partitionElement>
+            </lanes>
+          </childLaneSet>
+        </lanes>
+      </laneSets>
+      <resources
+          id="_18_0_4_8f30289_1448015200939_520794_21883"
+          name="Enterpreteur"/>
+      <resources
+          id="_18_0_5_8f30289_1455657685689_622107_24566"
+          name="Sportello compensoria le or sportello minicipale"/>
+      <resources
+          id="_18_0_4_8f30289_1448015495321_604836_22008"
+          name="Third Party PA"/>
+    </processes>
+  </bpmnModels>
+</lpad:LPAdRoot>

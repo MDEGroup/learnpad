@@ -262,35 +262,11 @@
 				<configuration>
 					<source>1.7</source>
 					<target>1.7</target>
-                                        <encoding>UTF-8</encoding>
+						<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
-			<!-- COPY RESOURCES -->
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.6</version>
-				<executions>
-					<execution>
-						<id>copy-resources02</id>
-						<phase>process-classes</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${basedir}/target/classes/eu/learnpad/transformations/model2text/main/</outputDirectory>
-							<encoding>UTF-8</encoding>
-							<resources>
-								<resource>
-									<directory>${basedir}/src/main/java/eu/learnpad/transformations/model2text/main</directory>
-									<includes>
-										<include>generate.emtl</include>
-									</includes>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+			
+			
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
@@ -339,24 +315,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<groupId>org.eclipse.acceleo</groupId>
-				<artifactId>org.eclipse.acceleo.maven.launcher</artifactId>
-				<version>3.5.2</version>
-				<executions>
-					<execution>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>acceleo-launcher</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<generatorClass>eu.learnpad.transformations.model2text.main.Generate</generatorClass>
-					<model>${basedir}/src/main/resources/metamodels/xwiki/XWIKI.ecore</model>
-					<outputFolder>${basedir}/src</outputFolder>
-				</configuration>
-			</plugin>
+			
 		</plugins>
 	</build>
 </project>
